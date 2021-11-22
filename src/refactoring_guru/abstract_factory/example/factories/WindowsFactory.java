@@ -4,7 +4,8 @@ import refactoring_guru.abstract_factory.example.buttons.Button;
 import refactoring_guru.abstract_factory.example.buttons.WindowsButton;
 import refactoring_guru.abstract_factory.example.checkboxes.Checkbox;
 import refactoring_guru.abstract_factory.example.checkboxes.WindowsCheckbox;
-
+import refactoring_guru.abstract_factory.example.logos.WindowsLogo;
+import refactoring_guru.abstract_factory.example.logos.Logo;
 /**
  * EN: Each concrete factory extends basic factory and responsible for creating
  * products of a single variety.
@@ -21,5 +22,10 @@ public class WindowsFactory implements GUIFactory {
     @Override
     public Checkbox createCheckbox() {
         return new WindowsCheckbox();
+    }
+
+    @Override
+    public Logo createLogo() {
+        return new WindowsLogo();
     }
 }
