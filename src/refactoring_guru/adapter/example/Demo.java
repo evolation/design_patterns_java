@@ -1,6 +1,8 @@
 package refactoring_guru.adapter.example;
 
+import refactoring_guru.adapter.example.adapters.HexPegAdapter;
 import refactoring_guru.adapter.example.adapters.SquarePegAdapter;
+import refactoring_guru.adapter.example.hex.HexPeg;
 import refactoring_guru.adapter.example.round.RoundHole;
 import refactoring_guru.adapter.example.round.RoundPeg;
 import refactoring_guru.adapter.example.square.SquarePeg;
@@ -37,6 +39,13 @@ public class Demo {
         }
         if (!hole.fits(largeSqPegAdapter)) {
             System.out.println("Square peg w20 does not fit into round hole r5.");
+        }
+        HexPeg smallHexPeg = new HexPeg(20);
+        HexPegAdapter smallHexPegAdapter = new HexPegAdapter(smallHexPeg);
+
+        if (!hole.fits(smallHexPegAdapter))
+        {
+            System.out.println("Hex peg r20 dont fit round hole r5.");
         }
     }
 }
